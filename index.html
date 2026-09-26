@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,78 +13,352 @@
 
     <style>
 
+        /* ==============================
+           GLOBAL
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
+
             margin: 0;
-            padding: 40px 20px;
+
+            font-family:
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: #f3f5f7;
+
+            color: #202124;
+
             line-height: 1.8;
         }
 
-        .container {
-            max-width: 950px;
-            margin: auto;
-            background: white;
-            padding: 45px;
-            border-radius: 14px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+
+            background: #1f2937;
+
+            color: white;
+
+            padding: 45px 20px;
+
+            text-align: center;
+
         }
+
+        header h1 {
+
+            margin: 0;
+
+            font-size: 32px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.3px;
+
+        }
+
+        header p {
+
+            margin: 10px 0 0;
+
+            color: #d1d5db;
+
+            font-size: 16px;
+
+        }
+
+
+        /* ==============================
+           MAIN CONTAINER
+        ============================== */
+
+        main {
+
+            max-width: 1000px;
+
+            margin: 40px auto;
+
+            padding: 0 20px;
+
+        }
+
+
+        /* ==============================
+           CONTENT CARD
+        ============================== */
+
+        .content-card {
+
+            background: white;
+
+            padding: 45px;
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 4px 20px rgba(0,0,0,0.06);
+
+        }
+
+
+        /* ==============================
+           MARKDOWN CONTENT
+        ============================== */
 
         #content {
+
             font-size: 17px;
+
         }
 
-        h1, h2, h3, h4, h5 {
-            line-height: 1.4;
+
+        #content h1 {
+
+            font-size: 30px;
+
+            margin-top: 0;
+
+            margin-bottom: 25px;
+
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+
+        #content h2 {
+
+            margin-top: 40px;
+
+            padding-bottom: 8px;
+
+            border-bottom: 2px solid #e5e7eb;
+
+        }
+
+
+        #content h3 {
+
+            margin-top: 30px;
+
+        }
+
+
+        #content p {
+
+            margin: 16px 0;
+
+        }
+
+
+        /* ==============================
+           LINKS
+        ============================== */
+
+        #content a {
+
+            color: #2563eb;
+
+            text-decoration: none;
+
+        }
+
+        #content a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* ==============================
+           TABLE
+        ============================== */
+
+        .table-wrapper {
+
+            overflow-x: auto;
+
             margin: 25px 0;
+
         }
 
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 10px 12px;
+
+        #content table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 650px;
+
+        }
+
+
+        #content th,
+        #content td {
+
+            border: 1px solid #d1d5db;
+
+            padding: 12px 14px;
+
             text-align: left;
+
+            vertical-align: top;
+
         }
 
-        th {
-            background: #f0f0f0;
+
+        #content th {
+
+            background: #f3f4f6;
+
+            font-weight: 700;
+
         }
 
-        blockquote {
-            border-left: 4px solid #888;
-            margin: 20px 0;
-            padding: 10px 20px;
-            background: #f7f7f7;
+
+        #content tr:nth-child(even) {
+
+            background: #fafafa;
+
         }
 
-        code {
-            background: #f0f0f0;
-            padding: 2px 5px;
-            border-radius: 4px;
+
+        /* ==============================
+           BLOCKQUOTE
+        ============================== */
+
+        #content blockquote {
+
+            margin: 25px 0;
+
+            padding: 15px 20px;
+
+            border-left: 4px solid #6b7280;
+
+            background: #f9fafb;
+
+            color: #4b5563;
+
         }
 
-        hr {
-            margin: 30px 0;
+
+        /* ==============================
+           CODE
+        ============================== */
+
+        #content code {
+
+            background: #f1f5f9;
+
+            padding: 3px 6px;
+
+            border-radius: 5px;
+
+            font-family: Consolas, monospace;
+
         }
+
+
+        /* ==============================
+           IMAGES
+        ============================== */
+
+        #content img {
+
+            max-width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            margin: 25px auto;
+
+            border-radius: 10px;
+
+        }
+
+
+        /* ==============================
+           HORIZONTAL RULE
+        ============================== */
+
+        #content hr {
+
+            border: 0;
+
+            border-top: 1px solid #e5e7eb;
+
+            margin: 35px 0;
+
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #6b7280;
+
+            font-size: 14px;
+
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
 
         @media (max-width: 700px) {
 
-            body {
-                padding: 15px;
+            header {
+
+                padding: 30px 15px;
+
             }
 
-            .container {
-                padding: 25px;
+            header h1 {
+
+                font-size: 25px;
+
             }
 
-            table {
-                display: block;
-                overflow-x: auto;
+            main {
+
+                margin: 20px auto;
+
+                padding: 0 12px;
+
+            }
+
+            .content-card {
+
+                padding: 25px 20px;
+
+                border-radius: 12px;
+
+            }
+
+            #content {
+
+                font-size: 16px;
+
             }
 
         }
@@ -92,16 +367,60 @@
 
 </head>
 
+
 <body>
 
-    <div class="container">
 
-        <div id="content">
-            Loading...
-        </div>
+    <!-- ==============================
+         HEADER
+    ============================== -->
 
-    </div>
+    <header>
 
+        <h1>
+            Vocabulary → Contextual Transfer
+        </h1>
+
+        <p>
+            Advanced English Vocabulary Learning
+        </p>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    ============================== -->
+
+    <main>
+
+        <section class="content-card">
+
+            <div id="content">
+
+                Loading...
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        Vocabulary Contextual Transfer
+
+    </footer>
+
+
+    <!-- ==============================
+         LOAD MARKDOWN
+    ============================== -->
 
     <script>
 
@@ -110,17 +429,21 @@
 
 
         fetch(markdownFile)
+
             .then(response => {
 
                 if (!response.ok) {
+
                     throw new Error(
                         "Could not load Markdown file."
                     );
+
                 }
 
                 return response.text();
 
             })
+
 
             .then(markdown => {
 
@@ -129,16 +452,23 @@
 
             })
 
+
             .catch(error => {
 
                 document.getElementById("content").innerHTML = `
+
                     <h2>⚠️ Error</h2>
-                    <p>${error.message}</p>
+
+                    <p>
+                        ${error.message}
+                    </p>
+
                 `;
 
             });
 
     </script>
+
 
 </body>
 

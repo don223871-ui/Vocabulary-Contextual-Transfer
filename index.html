@@ -24,7 +24,7 @@
             font-family: "Segoe UI", Arial, sans-serif;
             background: #f5f5f5;
             color: #222;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         header {
@@ -70,6 +70,22 @@
             color: #2563eb;
         }
 
+        /* Mixed Persian + English text */
+        #content p,
+        #content li,
+        #content blockquote,
+        #content h1,
+        #content h2,
+        #content h3,
+        #content h4,
+        #content h5,
+        #content h6,
+        #content th,
+        #content td {
+            direction: auto;
+        }
+
+        /* Tables */
         #content table {
             width: 100%;
             border-collapse: collapse;
@@ -80,7 +96,6 @@
         #content td {
             border: 1px solid #ddd;
             padding: 10px 12px;
-            text-align: left;
             vertical-align: top;
         }
 
@@ -88,6 +103,14 @@
             background: #f3f4f6;
         }
 
+        /* Code and technical text */
+        #content code,
+        #content pre {
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* Blockquotes */
         #content blockquote {
             margin: 20px 0;
             padding: 10px 20px;
@@ -95,6 +118,7 @@
             background: #f8f8f8;
         }
 
+        /* Images */
         #content img {
             max-width: 100%;
             height: auto;
@@ -158,15 +182,36 @@
 
                 return response.text();
             })
+
             .then(markdown => {
-                document.getElementById("content").innerHTML =
+
+                const content =
+                    document.getElementById("content");
+
+                content.innerHTML =
                     marked.parse(markdown);
+
+                /*
+                 * Automatically detect RTL / LTR
+                 * for each block of content.
+                 */
+                const elements = content.querySelectorAll(
+                    "h1, h2, h3, h4, h5, h6, p, li, blockquote, th, td"
+                );
+
+                elements.forEach(element => {
+                    element.setAttribute("dir", "auto");
+                });
+
             })
+
             .catch(error => {
+
                 document.getElementById("content").innerHTML = `
                     <h2>⚠️ Error</h2>
                     <p>${error.message}</p>
                 `;
+
             });
     </script>
 

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,11 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <style>
-
-        /* ==============================
-           GLOBAL
-        ============================== */
-
         * {
             box-sizing: border-box;
         }
@@ -26,449 +20,155 @@
         }
 
         body {
-
             margin: 0;
-
-            font-family:
-                "Segoe UI",
-                Arial,
-                sans-serif;
-
-            background: #f3f5f7;
-
-            color: #202124;
-
-            line-height: 1.8;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.7;
         }
 
-
-        /* ==============================
-           HEADER
-        ============================== */
-
         header {
-
-            background: #1f2937;
-
-            color: white;
-
-            padding: 45px 20px;
-
+            padding: 30px 20px;
             text-align: center;
-
+            background: #1f2937;
+            color: white;
         }
 
         header h1 {
-
             margin: 0;
-
-            font-size: 32px;
-
-            font-weight: 700;
-
-            letter-spacing: 0.3px;
-
+            font-size: 30px;
         }
 
         header p {
-
-            margin: 10px 0 0;
-
+            margin: 8px 0 0;
             color: #d1d5db;
-
-            font-size: 16px;
-
         }
-
-
-        /* ==============================
-           MAIN CONTAINER
-        ============================== */
 
         main {
-
-            max-width: 1000px;
-
-            margin: 40px auto;
-
+            max-width: 950px;
+            margin: 35px auto;
             padding: 0 20px;
-
         }
-
-
-        /* ==============================
-           CONTENT CARD
-        ============================== */
-
-        .content-card {
-
-            background: white;
-
-            padding: 45px;
-
-            border-radius: 16px;
-
-            box-shadow:
-                0 4px 20px rgba(0,0,0,0.06);
-
-        }
-
-
-        /* ==============================
-           MARKDOWN CONTENT
-        ============================== */
 
         #content {
-
-            font-size: 17px;
-
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
         }
-
 
         #content h1 {
-
-            font-size: 30px;
-
             margin-top: 0;
-
-            margin-bottom: 25px;
-
         }
-
 
         #content h2 {
-
-            margin-top: 40px;
-
-            padding-bottom: 8px;
-
-            border-bottom: 2px solid #e5e7eb;
-
+            margin-top: 35px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #ddd;
         }
-
-
-        #content h3 {
-
-            margin-top: 30px;
-
-        }
-
-
-        #content p {
-
-            margin: 16px 0;
-
-        }
-
-
-        /* ==============================
-           LINKS
-        ============================== */
 
         #content a {
-
             color: #2563eb;
-
-            text-decoration: none;
-
         }
-
-        #content a:hover {
-
-            text-decoration: underline;
-
-        }
-
-
-        /* ==============================
-           TABLE
-        ============================== */
-
-        .table-wrapper {
-
-            overflow-x: auto;
-
-            margin: 25px 0;
-
-        }
-
 
         #content table {
-
             width: 100%;
-
             border-collapse: collapse;
-
-            min-width: 650px;
-
+            margin: 20px 0;
         }
-
 
         #content th,
         #content td {
-
-            border: 1px solid #d1d5db;
-
-            padding: 12px 14px;
-
+            border: 1px solid #ddd;
+            padding: 10px 12px;
             text-align: left;
-
             vertical-align: top;
-
         }
-
 
         #content th {
-
             background: #f3f4f6;
-
-            font-weight: 700;
-
         }
-
-
-        #content tr:nth-child(even) {
-
-            background: #fafafa;
-
-        }
-
-
-        /* ==============================
-           BLOCKQUOTE
-        ============================== */
 
         #content blockquote {
-
-            margin: 25px 0;
-
-            padding: 15px 20px;
-
-            border-left: 4px solid #6b7280;
-
-            background: #f9fafb;
-
-            color: #4b5563;
-
+            margin: 20px 0;
+            padding: 10px 20px;
+            border-left: 4px solid #999;
+            background: #f8f8f8;
         }
-
-
-        /* ==============================
-           CODE
-        ============================== */
-
-        #content code {
-
-            background: #f1f5f9;
-
-            padding: 3px 6px;
-
-            border-radius: 5px;
-
-            font-family: Consolas, monospace;
-
-        }
-
-
-        /* ==============================
-           IMAGES
-        ============================== */
 
         #content img {
-
             max-width: 100%;
-
             height: auto;
-
-            display: block;
-
-            margin: 25px auto;
-
-            border-radius: 10px;
-
         }
-
-
-        /* ==============================
-           HORIZONTAL RULE
-        ============================== */
-
-        #content hr {
-
-            border: 0;
-
-            border-top: 1px solid #e5e7eb;
-
-            margin: 35px 0;
-
-        }
-
-
-        /* ==============================
-           FOOTER
-        ============================== */
 
         footer {
-
             text-align: center;
-
-            padding: 30px 20px;
-
-            color: #6b7280;
-
+            padding: 25px 20px;
+            color: #777;
             font-size: 14px;
-
         }
 
-
-        /* ==============================
-           MOBILE
-        ============================== */
-
         @media (max-width: 700px) {
-
-            header {
-
-                padding: 30px 15px;
-
-            }
-
             header h1 {
-
-                font-size: 25px;
-
+                font-size: 24px;
             }
 
             main {
-
                 margin: 20px auto;
-
                 padding: 0 12px;
-
-            }
-
-            .content-card {
-
-                padding: 25px 20px;
-
-                border-radius: 12px;
-
             }
 
             #content {
-
-                font-size: 16px;
-
+                padding: 25px 20px;
             }
 
+            #content table {
+                display: block;
+                overflow-x: auto;
+            }
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- ==============================
-         HEADER
-    ============================== -->
-
     <header>
-
-        <h1>
-            Vocabulary → Contextual Transfer
-        </h1>
-
-        <p>
-            Advanced English Vocabulary Learning
-        </p>
-
+        <h1>Vocabulary → Contextual Transfer</h1>
+        <p>Advanced English Vocabulary Learning</p>
     </header>
 
-
-    <!-- ==============================
-         MAIN CONTENT
-    ============================== -->
-
     <main>
-
-        <section class="content-card">
-
-            <div id="content">
-
-                Loading...
-
-            </div>
-
-        </section>
-
+        <div id="content">
+            Loading...
+        </div>
     </main>
 
-
-    <!-- ==============================
-         FOOTER
-    ============================== -->
-
     <footer>
-
-        Vocabulary Contextual Transfer
-
+        Vocabulary → Contextual Transfer
     </footer>
 
-
-    <!-- ==============================
-         LOAD MARKDOWN
-    ============================== -->
-
     <script>
-
         const markdownFile =
             "Vocabulary%20%E2%86%92%20Contextual%20Transfer.md";
 
-
         fetch(markdownFile)
-
             .then(response => {
-
                 if (!response.ok) {
-
-                    throw new Error(
-                        "Could not load Markdown file."
-                    );
-
+                    throw new Error("Could not load Markdown file.");
                 }
 
                 return response.text();
-
             })
-
-
             .then(markdown => {
-
                 document.getElementById("content").innerHTML =
                     marked.parse(markdown);
-
             })
-
-
             .catch(error => {
-
                 document.getElementById("content").innerHTML = `
-
                     <h2>⚠️ Error</h2>
-
-                    <p>
-                        ${error.message}
-                    </p>
-
+                    <p>${error.message}</p>
                 `;
-
             });
-
     </script>
-
 
 </body>
 
